@@ -2,14 +2,7 @@
 
 . k8s-read-config
 
-if [ -z "$1" ]
-then
-  echo "ERROR: No deployments specified"
-  exit 1
-fi
-
 echo "Rolling back deployments"
-echo "$1"
 
 for index in "${!DEPLOYMENTS[@]}"
 do
