@@ -7,6 +7,7 @@ then
 fi
 
 echo "Rolling back deployments"
+echo "$1"
 
 for index in "${!1[@]}"
 do
