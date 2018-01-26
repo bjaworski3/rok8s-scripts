@@ -15,10 +15,7 @@ do
     echo "DEPLOY SUCCESFUL"
   elif [ "$result" == "143" ] ; then
     echo "------- DEPLOYMENT TIMEOUT FAIL --------"
-    if [[ -z "${ROK8S_ROLLBACK_DEPLOYMENTS}" ]]; then
-      echo "Rolling back"
-      rollback-deployment
-    fi
+    rollback-deployment
     exit 1
   else
     echo "DEPLOY FAILED"
