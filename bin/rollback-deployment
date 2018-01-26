@@ -8,6 +8,8 @@ then
   exit 1
 fi
 
+echo "$1"
+
 for index in "${1}"
 do
   DEPLOYMENT=${1[$index]##*/}
