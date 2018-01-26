@@ -1,7 +1,5 @@
 #!/bin/bash
 
-. k8s-read-config
-
 echo "Rolling back deployments"
 
 for index in "${!DEPLOYMENTS[@]}"
