@@ -10,7 +10,7 @@ fi
 
 echo "$1"
 
-for index in "${1[@]}"
+for index in "$@"
 do
   DEPLOYMENT=${1[$index]##*/}
   echo "Rolling back deployment for $DEPLOYMENT"
