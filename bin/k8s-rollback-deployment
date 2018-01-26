@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 
 . k8s-read-config
 
@@ -7,5 +7,9 @@ echo "Rolling back deployments"
 for index in "${!DEPLOYMENTS[@]}"
 do
   DEPLOYMENT=${DEPLOYMENTS[$index]##*/}
+  echo "Rolling back deployment for $DEPLOYMENT"
   kubectl --namespace="${NAMESPACE:=default}" rollout undo deployment/"${DEPLOYMENT}"
 done
+
+echo "All deployments rolled back"
+echo ""
