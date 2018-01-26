@@ -18,6 +18,7 @@ do
     if [[ -z "${ROK8S_ROLLBACK_DEPLOYMENTS}" ]]; then
       rollback-deployment
     fi
+    echo "Skipped rollback"
     exit 1
   else
     echo "DEPLOY FAILED"
