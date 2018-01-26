@@ -8,11 +8,11 @@ then
   exit 1
 fi
 
-echo "$1"
+deployments=("$@")
 
-for index in "$@"
+for index in "${deployments[@]}"
 do
-  DEPLOYMENT=${@[$index]##*/}
+  DEPLOYMENT=${deployments[$index]##*/}
   echo "Rolling back deployment for $DEPLOYMENT"
   kubectl --namespace="${NAMESPACE:=default}" rollout undo deployment/"${DEPLOYMENT}"
 done
