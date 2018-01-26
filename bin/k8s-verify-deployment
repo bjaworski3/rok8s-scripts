@@ -15,7 +15,7 @@ do
     echo "DEPLOY SUCCESFUL"
   elif [ "$result" == "143" ] ; then
     echo "------- DEPLOYMENT TIMEOUT FAIL --------"
-    rollback-deployment $DEPLOYMENTS
+    rollback-deployment ${DEPLOYMENTS[@]}
     exit 1
   else
     echo "DEPLOY FAILED"
